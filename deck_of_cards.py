@@ -7,10 +7,10 @@ from enum import Enum
 # Is there a particular format you'd like the deck of cards in?
 
 class Suit(Enum):
-    clubs = 1
-    diamonds = 2
-    hearts = 3
-    spades = 4
+    clubs = 0
+    diamonds = 1
+    hearts = 2
+    spades = 3
 
 
 class Card():
@@ -18,31 +18,39 @@ class Card():
         # check if suit is actually in Suit Enum
         self.suit = suit
         self.card_num = card_num
+    def __repr__(self):
+        return "{} of {}".format(self.card_num, self.suit)
+    def __str__(self):
+        return "{} of {}".format(self.card_num, self.suit)
 
-
-class Deck:
-    def __init__(self, card, size):
-        self.card = card
-        self.size = size
-        self.deck
-
-    def _build_deck:
-        counter = 1
-        for i in range(self.size):
-            
-            if suit == Suit.spades:
-                counter = counter+1
-
-    deck = 
+def build_deck(size) -> Card:
+    card_num = 1
+    deck = []
+    for i in range(size):
+        deck.append(Card(Suit(i%4), card_num))
+        if deck[i].suit == Suit.spades:
+            card_num = card_num+1
+    
     return deck
 
+print("Enter size of deck:")
+deck_size = input()
 
-class Animal:
-    def __init__(self, size, sound):
-        self.size = size
-        self.sound = sound
+deck = build_deck(int(deck_size))
 
-    def make_noise(self):
-        print(self.sound)
+print(deck)
+
+print("Enter index of deck:")
+deck_i = input()
+
+print(deck[int(deck_i)])
+
+# class Animal:
+#     def __init__(self, size, sound):
+#         self.size = size
+#         self.sound = sound
+
+#     def make_noise(self):
+#         print(self.sound)
         
-dog = Animal('medium', 'woof')
+# dog = Animal('medium', 'woof')
