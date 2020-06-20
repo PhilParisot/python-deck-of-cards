@@ -15,7 +15,6 @@ class Suit(Enum):
 
 class Card():
     def __init__(self, suit, card_num):
-        # check if suit is actually in Suit Enum
         self.suit = suit
         self.card_num = card_num
     def __repr__(self):
@@ -38,7 +37,7 @@ deck_size = input()
 
 deck = build_deck(int(deck_size))
 
-print(deck)
+print(deck, "\n")
 
 print("Enter index of deck:")
 deck_i = input()
