@@ -44,13 +44,3 @@ print("Enter index of deck:")
 deck_i = input()
 
 print(deck[int(deck_i)])
-
-# class Animal:
-#     def __init__(self, size, sound):
-#         self.size = size
-#         self.sound = sound
-
-#     def make_noise(self):
-#         print(self.sound)
-        
-# dog = Animal('medium', 'woof')
